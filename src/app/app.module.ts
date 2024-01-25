@@ -11,10 +11,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/enviroment.prod';
 import { ListInicioComponent } from './components/list-inicio/list-inicio.component';
-import { PaginaPrincipalComponent } from './components/pagina-principal/pagina-principal.component';
-import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-
 
 
 @NgModule({

@@ -13,6 +13,7 @@ const routes: Routes = [
   {path: 'consulta', loadChildren: () => import('./components/consulta/consulta.module').then(x => x.ConsultaModule)},
   {path: 'list-inicio', component: ListInicioComponent},
   {path: 'pagina-principal', loadChildren: () => import('./components/pagina-principal/pagina-principal.module').then(x => x.PaginaPrincipalModule)},
+  {path: 'historial-inicio', loadChildren: () => import('./components/historial-inicio/historial-inicio.module').then(x => x.HistorialInicioModule)},
   {path: '**', redirectTo: 'login',pathMatch: 'full'  } 
 
 

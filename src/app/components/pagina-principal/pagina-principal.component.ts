@@ -71,7 +71,7 @@ export class PaginaPrincipalComponent implements OnInit {
   revisarUsuario(cedula: any) {
     this._sharedService.actualizarCedula(cedula)
     console.log(cedula);
-    this.router.navigate(['/list-inicio', { usuario: cedula }]);
+    this.router.navigate(['/historial-inicio', { usuario: cedula }]);
   }
 
 }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<body>
+    <mat-toolbar>
+        <img src="../../../assets/img/Imagen1.png" width="130" height="70" style="margin-right: 30px">
+        <button mat-button style="margin-right: 30px">Inicio</button>
+        <button mat-button>Nuevo Paciente</button>
+        <span style="flex: 1;"></span>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>person</mat-icon>
+        </button>
+    </mat-toolbar>
+    <form class="data-item">
+        <div class="container">
+            <h1>HISTORIAL CLINICO</h1>
+            <div class="nombre">
+                <label class="label-nombre" for="nombre">NÚMERO Y APELLIDOS: <span
+                        class="linea-inferior">{{ userData?.nombre }}</span></label>
+            </div>
+            <div class="cedula">
+                <label class="label-cedula" for="cedula">CEDULA: <span class="linea-inferior">{{ userData?.cedula
+                        }}</span></label>
+            </div>
+            <div class="atencion">
+                <label class="label-atencion" for="atencion">FECHA INGRESO: <span class="linea-inferior">{{
+                        userData?.fechaIngreso }}</span></label>
+
+            </div>
+            <div class="afiliacion">
+                <label class="label-afiliacion" for="afiliacion">ULTIMA FECHA: <span class="linea-inferior">{{
+                        userData?.fechaUltima }}</span></label>
+            </div>
+            <button mat-button (click)="revisarUsuario(userData?.cedula)">Revisar Usuario</button>   
+        </div>
+
+        
+
+
+
+    </form>
+</body>
+
+</html>
