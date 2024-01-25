@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<body>
+    <mat-toolbar>
+        <img src="../../../assets/img/Imagen1.png" width="130" height="70" style="margin-right: 30px">
+        <button mat-button style="margin-right: 30px">Inicio</button>
+        <button mat-button>Ingresar Datos</button>
+        <span style="flex: 1;"></span>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>person</mat-icon>
+        </button>
+    </mat-toolbar>
+    <div class="container">
+        <h1>PRIMERA CONSULTA</h1>
+        <div class="mensaje">
+            <p>La información recolectada en la encuesta servirá para mejorar las prestaciones de salud del IESS Loja.
+                La información obtenida no revelara sus datos personales ni las respuestas individuales.</p>
+        </div>
+        <div class="cedula">
+            <label class="label-cedula" for="cedula">NÚMERO DE CÉDULA</label>
+            <mat-form-field class="custom-inputc">
+                <mat-label>Número de cédula</mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div>
+        <div class="mujer">
+            <label class="label-mujer" for="mujer">MUJER <br>
+                - HTA EN EL EMBARAZO <br>
+                - DIABETES GESTACIONAL SÍNDROME DE OVARIO POLIQUISTICO <br>
+                - MENOPAUSIA <br>
+                - TRATAMIENTO HORMONAL <br>
+                Si detecta alguna señalar SI</label>
+            <mat-form-field class="custom-inputmujer">
+                <mat-label>Seleccionar</mat-label>
+                <mat-select>
+                    <mat-option value="one">First option</mat-option>
+                    <mat-option value="two">Second option</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="enfermedades">
+            <label class="label-enfermedades" for="enfermedades">ENFERMEDADES INFLAMATORIAS <br>
+                - PSORIASIS <br>
+                - LUPUS ERITEMATOSO SISTEMICO <br>
+                - HIV <br>
+                - NEOPLASIAS <br>
+                Si detecta alguna señalar SI</label>
+            <mat-form-field class="custom-inputenfermedades">
+                <mat-label>Seleccionar</mat-label>
+                <mat-select>
+                    <mat-option value="one">First option</mat-option>
+                    <mat-option value="two">Second option</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <h2>ANTECEDENTES PATOLÓGICOS PERSONALES</h2>
+        <div class="hipotirodismo">
+            <label class="label-hipotirodismo" for="hipotirodismo">ANTECEDENTES PATOLÓGICOS PERSONALES DE HIPOTIROIDISMO
+                (E039)</label>
+            <mat-form-field class="custom-inputhipotirodismo">
+                <mat-label>Seleccionar</mat-label>
+                <mat-select>
+                    <mat-option value="one">First option</mat-option>
+                    <mat-option value="two">Second option</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="diabetes">
+            <label class="label-diabetes" for="diabetes">ANTECEDENTES PATOLOGICOS PERSONALES DE DIABETES <br>
+                - E10 (Diabetes mellitus insulinodependiente) <br>
+                - E11 (Diabetes mellitus no insulinodependiente)</label>
+            <mat-form-field class="custom-inputdiabetes">
+                <mat-label>Seleccionar</mat-label>
+                <mat-select>
+                    <mat-option value="one">First option</mat-option>
+                    <mat-option value="two">Second option</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="arterial">
+            <label class="label-arterial" for="arterial">ANTECEDENTES PATOLÓGICOS PERSONALES DE HIPERTENSIÓN ARTERIAL
+                (I10)</label>
+            <mat-form-field class="custom-inputarterial">
+                <mat-label>Seleccionar</mat-label>
+                <mat-select>
+                    <mat-option value="one">First option</mat-option>
+                    <mat-option value="two">Second option</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="cronica">
+            <label class="label-cronica" for="cronica">ANTECEDENTES DE INSUFICIENCIA RENAL CRONICA (N188)</label>
+            <mat-form-field class="custom-inputcronica">
+                <mat-label>Seleccionar</mat-label>
+                <mat-select>
+                    <mat-option value="one">First option</mat-option>
+                    <mat-option value="two">Second option</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="cancer">
+            <label class="label-cancer" for="cancer">ANTECEDENTES PATOLOGICOS PERSONALES DE CANCER (USAR CIE10)</label>
+            <mat-form-field class="custom-inputcancer">
+                <mat-label>Seleccionar</mat-label>
+                <mat-select>
+                    <mat-option value="one">First option</mat-option>
+                    <mat-option value="two">Second option</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="obesidad">
+            <label class="label-obesidad" for="obesidad">ANTECEDENTES DE OBESIDAD (E66)</label>
+            <mat-form-field class="custom-inputobesidad">
+                <mat-label>Seleccionar</mat-label>
+                <mat-select>
+                    <mat-option value="one">First option</mat-option>
+                    <mat-option value="two">Second option</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="dislipidemias">
+            <label class="label-dislipidemias" for="dislipidemias">ANTECEDENTES PATOLOGICOS PERSONALES DE DISLIPIDEMIAS
+                <br>
+                - E785 (hiperlipidemia no especificada) <br>
+                - E780 (hipercolesterolemia pura) <br>
+                - E781 (Hipergliceridemia pura) <br>
+                - E782 (hiperlipidemia mixta)</label>
+            <mat-form-field class="custom-inputdislipidemias">
+                <mat-label>Seleccionar</mat-label>
+                <mat-select>
+                    <mat-option value="one">First option</mat-option>
+                    <mat-option value="two">Second option</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="personales">
+            <label class="label-personales" for="personales">ANTECEDENTES PATOLÓGICOS PERSONALES DE: <br>
+                - INFARTO AGUDO DE MIOCARDIO (I21) <br>
+                - ACCIDENTE CEREBRO VASCULAR (I64)</label>
+            <mat-form-field class="custom-inputpersonales">
+                <mat-label>Seleccionar</mat-label>
+                <mat-select>
+                    <mat-option value="one">First option</mat-option>
+                    <mat-option value="two">Second option</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="otros">
+            <label class="label-otros" for="otros">OTROS ANTECEDENTES PERSONALES</label>
+            <mat-form-field class="custom-inputotros">
+                <mat-label>Seleccionar</mat-label>
+                <mat-select>
+                    <mat-option value="one">First option</mat-option>
+                    <mat-option value="two">Second option</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <h3>ENFERMEDAD ACTUAL Y EXAMEN FÍSICO</h3>
+        <div class="valoracion">
+            <label class="label-valoracion" for="valoracion">VALORACIÓN ODONTOLOGICA</label>
+            <mat-form-field class="custom-inputvaloracion">
+                <mat-label>Seleccionar</mat-label>
+                <mat-select>
+                    <mat-option value="one">First option</mat-option>
+                    <mat-option value="two">Second option</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="cie10">
+            <label class="label-cie10" for="cie10">DIAGNÓSTICO INICIAL <br>
+                (FAVOR USAR CIE10) <br>
+                DESDE PRINCIPAL A SECUNDARIOS EN ORDEN DESCENDENTE 4 DÍGITOS <br>
+                Ejemplo: E782 - E784 - E110 - E140</label>
+            <mat-selection-list #shoes (selectionChange)="onSelectionChange($event)">
+                <mat-list-option *ngFor="let shoe of typesOfShoes" [value]="shoe">
+                    {{shoe}}
+                </mat-list-option>
+            </mat-selection-list>
+
+            <!-- Campo de entrada "Otros" -->
+            <mat-form-field class="custom-inputc">
+                <mat-label>Especificar (Seleccione Otros)</mat-label>
+                <input matInput [(ngModel)]="otherOption" [disabled]="!isOtherSelected">
+            </mat-form-field>
+
+            <p>
+                Options selected: {{shoes.selectedOptions.selected.length}}
+            </p>
+        </div>
+
+        <button type="submit" mat-raised-button color="accent" class="custom-button"
+            style="background-color: #7CADDC; color: #222940; width: 200px;" [disabled]="form.invalid">ENVIAR</button>
+
+        <button type="submit" mat-raised-button color="accent" class="custom-button2"
+            style="background-color: #D7D7D7; color: #222940; width: 240px;" [disabled]="form.invalid">ENVIAR PACIENTE A
+            VALORACIÓN ODONTOLÓGICA</button>
+
+        <h4>RECUERDE ENVIAR AL PACIENTE A VALORACIÓN <br>
+            ODONTOLOGÍA EN CASO DE CONSIDERAR NECESARIO</h4>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,325 @@
+h1 {
+    width: 712px;
+    height: 170px;
+    top: 117px;
+    left: 364px;
+
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 82.03px;
+
+    color: #222940;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.mensaje {
+    width: 918px;
+    height: 84px;
+    top: 224px;
+    left: 261px;
+
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28.13px;
+    align-items: center;
+
+    color: #484848;
+    margin: -150px auto;
+    text-align: center;
+}
+
+.cedula {
+    position: absolute;
+    left: 360px;
+    bottom: 490PX;
+}
+
+.label-cedula {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputc {
+    width: 450px;
+}
+
+.mujer {
+    position: absolute;
+    left: 360px;
+    bottom: 270PX;
+}
+
+.label-mujer {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputmujer {
+    width: 450px;
+}
+
+.enfermedades {
+    position: absolute;
+    left: 1060px;
+    bottom: 270PX;
+}
+
+.label-enfermedades {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputenfermedades {
+    width: 450px;
+}
+
+h2 {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 82.03px;
+    color: #222940;
+    margin-top: 520px;
+    text-align: center;
+}
+
+.hipotirodismo {
+    position: absolute;
+    left: 360px;
+    bottom: -25PX;
+}
+
+.label-hipotirodismo {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputhipotirodismo {
+    width: 450px;
+}
+
+
+.diabetes {
+    position: absolute;
+    left: 360px;
+    bottom: -195PX;
+}
+
+.label-diabetes {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputdiabetes {
+    width: 450px;
+}
+
+.arterial {
+    position: absolute;
+    left: 360px;
+    bottom: -345PX;
+}
+
+.label-arterial {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputarterial {
+    width: 450px;
+}
+
+.cronica {
+    position: absolute;
+    left: 360px;
+    bottom: -475PX;
+}
+
+.label-cronica {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputcronica {
+    width: 450px;
+}
+
+.cancer {
+    position: absolute;
+    left: 360px;
+    bottom: -625PX;
+}
+
+.label-cancer {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputcancer {
+    width: 450px;
+}
+
+.obesidad {
+    position: absolute;
+    left: 1060px;
+    bottom: -25PX;
+}
+
+.label-obesidad {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputobesidad {
+    width: 450px;
+}
+
+.dislipidemias {
+    position: absolute;
+    left: 1060px;
+    bottom: -235PX;
+}
+
+.label-dislipidemias {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputdislipidemias {
+    width: 450px;
+}
+
+.personales {
+    position: absolute;
+    left: 1060px;
+    bottom: -400PX;
+}
+
+.label-personales {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputpersonales {
+    width: 450px;
+}
+
+.otros {
+    position: absolute;
+    left: 1060px;
+    bottom: -530PX;
+}
+
+.label-otros {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputotros {
+    width: 450px;
+}
+
+h3 {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 82.03px;
+    color: #222940;
+    margin-top: 800px;
+    text-align: center;
+}
+
+.valoracion {
+    position: absolute;
+    left: 1060px;
+    bottom: -860PX;
+}
+
+.label-valoracion {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputvaloracion {
+    width: 450px;
+}
+
+
+.cie10 {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 360px;
+    margin-top: 20px;
+}
+.custom-button {
+    margin-left: 850px;;
+    margin-top: 50px;
+    font-size: 25px;
+}
+
+.custom-button2 {
+    margin-left: 1180px;;
+    margin-top: -1220px;
+    font-size: 11px;
+}
+
+h4 {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 12px;
+    color: #222940;
+    margin-top: -580px;
+    margin-left: 750px;
+    text-align: center;
+}
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.mat-toolbar {
+    background-color: #222940;
+    color: white;
+    /* Cambia el color del texto si es necesario para asegurarte de que sea legible */
+}

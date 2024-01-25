@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<body>
+  <mat-toolbar>
+    <img src="../../../assets/img/Imagen1.png" width="130" height="70" style="margin-right: 30px">
+    <button mat-button style="margin-right: 30px" [routerLink]="'/pagina-principal'">Inicio</button>
+    <button mat-button [routerLink]="'/inicio'">Nuevo Paciente</button>
+    <span style="flex: 1;"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>person</mat-icon>
+    </button>
+  </mat-toolbar>
+  <form [formGroup]="inicio" (ngSubmit)="agregarInicio()">
+    <div class="container">
+      <h1>DATOS GENERALES</h1>
+      <div class="mensaje">
+        <p>La información recolectada en la encuesta servirá para mejorar las prestaciones
+          de salud del IESS Loja. La información obtenida no revelará sus datos personales ni las
+          respuestas individuales.</p>
+      </div>
+      <div class="cedula">
+        <label class="label-cedula" for="cedula">NÚMERO DE CÉDULA</label>
+        <mat-form-field class="custom-inputc">
+          <mat-label>Número de cédula</mat-label>
+          <input matInput id="cedula" formControlName="cedula">
+        </mat-form-field>
+      </div>
+      <div class="nombre">
+        <label class="label-nombre" for="nombre">NOMBRES Y APELLIDOS</label>
+        <mat-form-field class="custom-inputn">
+          <mat-label>Nombres y Apellidos</mat-label>
+          <input matInput id="nombre" formControlName="nombre">
+        </mat-form-field>
+      </div>
+      <div class="atencion">
+        <label class="label-atencion" for="atencion">TIPO DE ATENCIÓN A BRINDAR</label>
+        <mat-form-field class="custom-inputa">
+          <mat-label>Seleccionar</mat-label>
+          <mat-select id="atencion" formControlName="atencion">
+            <mat-option value="MEDICINA PREVENTIVA">MEDICINA PREVENTIVA</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="afiliacion">
+        <label class="label-afiliacion" for="afiliacion">TIPO DE AFILIACIÓN</label>
+        <mat-form-field class="custom-inputaf">
+          <mat-label>Seleccionar</mat-label>
+          <mat-select id="afiliacion" formControlName="afiliacion">
+            <mat-option value="SG - AFILIADO DEL SEGURO GENERAL">SG - AFILIADO DEL SEGURO GENERAL</mat-option>
+            <mat-option value="AG - HIJOS DE AFILIADO MENOR 18 AÑOS">AG - HIJOS DE AFILIADO MENOR 18 AÑOS</mat-option>
+            <mat-option value="CV - AFILIADO VOLUNTARIO">CV - AFILIADO VOLUNTARIO</mat-option>
+            <mat-option value="CY - EXT.COBERTURA CONYUGE AFILIADO">CY - EXT.COBERTURA CONYUGE AFILIADO</mat-option>
+            <mat-option value="JU - PENSIONISTA DEL SEGURO GENERAL">JU - PENSIONISTA DEL SEGURO GENERAL</mat-option>
+            <mat-option value="MO - MONTEPIO VIUDA COTIZANTE 4.15%">MO - MONTEPIO VIUDA COTIZANTE 4.15%</mat-option>
+            <mat-option value="CA - FAMILIAR SEG.SOCIAL CAMPESINO">CA - FAMILIAR SEG.SOCIAL CAMPESINO</mat-option>
+            <mat-option value="JC - JUBILADO DEL SEG.SOC.CAMPESINO">JC - JUBILADO DEL SEG.SOC.CAMPESINO</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="sexo">
+        <label class="label-sexo" for="sexo">SEXO</label>
+        <mat-form-field class="custom-inputsexo">
+          <mat-label>Seleccionar</mat-label>
+          <mat-select id="sexo" formControlName="sexo">
+            <mat-option value="HOMBRE">HOMBRE</mat-option>
+            <mat-option value="MUJER">MUJER</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="edad">
+        <label class="label-edad" for="edad">EDAD</label>
+        <mat-form-field class="custom-inputedad">
+          <mat-label>Edad</mat-label>
+          <input matInput id="edad" formControlName="edad" type="number">
+        </mat-form-field>
+      </div>
+      
+      <div class="fechaNacimiento">
+        <label class="label-fechaNacimiento" for="fechaNacimiento">FECHA DE NACIMIENTO</label>
+        <mat-card class="demo-inline-calendar-card">
+          <mat-calendar [(selected)]="selected"(selectedChange)="onDateChange($event)"></mat-calendar>
+          <p>Fecha seleccionada: {{ selected | date:'yyyy/MM/dd' }}</p>
+        </mat-card>
+      </div>
+    
+    
+      <div class="estado">
+        <label class="label-estado" for="estado">ESTADO CIVIL</label>
+        <mat-form-field class="custom-inputestado">
+          <mat-label>Seleccionar</mat-label>
+          <mat-select id="estado" formControlName="estado">
+            <mat-option value="SOLTERO">SOLTERO</mat-option>
+            <mat-option value="CASADO">CASADO</mat-option>
+            <mat-option value="DIVORCIADO">DIVORCIADO</mat-option>
+            <mat-option value="VIUDO">VIUDO</mat-option>
+            <mat-option value="UNION LIBRE">UNION LIBRE</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="laboral">
+        <label class="label-laboral" for="laboral">ACTIVIDAD LABORAL</label>
+        <mat-form-field class="custom-inputlaboral">
+          <mat-label>Seleccionar</mat-label>
+          <mat-select id="laboral" formControlName="laboral">
+            <mat-option value="INDEPENDIENTE">INDEPENDIENTE</mat-option>
+            <mat-option value="DEPENDIENTE">DEPENDIENTE</mat-option>
+            <mat-option value="DESEMPLEADO">DESEMPLEADO</mat-option>
+            <mat-option value="JUBILADO">JUBILADO</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="parroquia">
+        <label class="label-parroquia" for="parroquia">PARROQUIA</label>
+        <mat-form-field class="custom-inputparroquia">
+          <mat-label>Seleccionar</mat-label>
+          <mat-select id="parroquia" formControlName="parroquia">
+            <mat-option value="EL SAGRARIO">EL SAGRARIO</mat-option>
+            <mat-option value="SUCRE">SUCRE</mat-option>
+            <mat-option value="EL VALLE">EL VALLE</mat-option>
+            <mat-option value="SAN SEBASTIAN">SAN SEBASTIAN</mat-option>
+            <mat-option value="PUNZARA">PUNZARA</mat-option>
+            <mat-option value="CARIGAN">CARIGAN</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="calles">
+        <label class="label-calles" for="calles">CALLE PRINCIPAL Y SECUNDARIA</label>
+        <mat-form-field class="custom-inputcalles">
+          <mat-label>Calle Principal y Secundaria</mat-label>
+          <input matInput id="calles" formControlName="calles">
+        </mat-form-field>
+      </div>
+      <div class="numcasa">
+        <label class="label-numcasa" for="numcasa">NÚMERO DE CASA</label>
+        <mat-form-field class="custom-inputnumcasa">
+          <mat-label>Número de casa</mat-label>
+          <input matInput id="numcasa" formControlName="numcasa">
+        </mat-form-field>
+      </div>
+      <div class="telefono">
+        <label class="label-telefono" for="telefono">TELÉFONO FIJO</label>
+        <mat-form-field class="custom-inputtelefono">
+          <mat-label>Teléfono Fijo</mat-label>
+          <input matInput id="telefono" formControlName="telefono" type="number">
+        </mat-form-field>
+      </div>
+      <div class="mail">
+        <label class="label-mail" for="mail">MAIL</label>
+        <mat-form-field class="custom-inputmail">
+          <mat-label>Mail</mat-label>
+          <input matInput id="mail" formControlName="mail">
+        </mat-form-field>
+      </div>
+      <div class="escolaridad">
+        <label class="label-escolaridad" for="escolaridad">ESCOLARIDAD</label>
+        <mat-form-field class="custom-inputescolaridad">
+          <mat-label>Seleccionar</mat-label>
+          <mat-select id="escolaridad" formControlName="escolaridad">
+            <mat-option value="NINGUNA">NINGUNA</mat-option>
+            <mat-option value="PRIMARIA">PRIMARIA</mat-option>
+            <mat-option value="SECUNDARIA">SECUNDARIA</mat-option>
+            <mat-option value="TERCER NIVEL">TERCER NIVEL</mat-option>
+            <mat-option value="CUARTO NIVEL">CUARTO NIVEL</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="institucion">
+        <label class="label-institucion" for="institucion">INSTITUCIÓN DONDE TRABAJA</label>
+        <mat-form-field class="custom-inputinstitucion">
+          <mat-label>Seleccionar</mat-label>
+          <mat-select id="institucion" formControlName="institucion">
+            <mat-option value="INDULOJA">INDULOJA</mat-option>
+            <mat-option value="ESPINOZA AGUIRRE SERVICIOS GENERALES CIA LTDA">ESPINOZA AGUIRRE SERVICIOS GENERALES CIA LTDA</mat-option>
+            <mat-option value="COOPERATIVA DE AHORRO Y CREDITO EDUCADORES DE LOJA CACEL">COOPERATIVA DE AHORRO Y CREDITO EDUCADORES DE LOJA CACEL</mat-option>
+            <mat-option value="BANCO DE DESARROLLO DEL ECUADOR B.P SUCURSAL ZONAL SUR">BANCO DE DESARROLLO DEL ECUADOR B.P SUCURSAL ZONAL SUR</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="ocupacion">
+        <label class="label-ocupacion" for="ocupacion">OCUPACIÓN</label>
+        <mat-form-field class="custom-inputocupacion">
+          <mat-label>Ocupación</mat-label>
+          <input matInput id="ocupacion" formControlName="ocupacion">
+        </mat-form-field>
+      </div>
+      <div class="guia">
+        <label class="label-guia" for="guia">¿LE GUSTARÍA RECIBIR GUIA PSICOLÓGICA?</label>
+        <mat-form-field class="custom-inputguia">
+          <mat-label>Seleccionar</mat-label>
+          <mat-select id="guia" formControlName="guia">
+            <mat-option value="SI">SI</mat-option>
+            <mat-option value="NO">NO</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="container2">
+      <h2>HÁBITOS PERSONALES</h2>
+      <div class="alimentacion">
+        <label class="label-alimentacion" for="alimentacion">ALIMENTACIÓN (CON QUE FRECUENCIA COME FRUTAS, VERDURAS, Y
+          HORTALIZAS)</label>
+        <mat-form-field class="custom-inputalimentacion">
+          <mat-label>Seleccionar</mat-label>
+          <mat-select id="alimentacion" formControlName="alimentacion">
+            <mat-option value="DIARIO">DIARIO</mat-option>
+            <mat-option value="EVENTUAL">EVENTUAL</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="fumar">
+        <label class="label-fumar" for="fumar">FUMA CIGARRILLO</label>
+        <mat-form-field class="custom-inputfumar">
+          <mat-label>Seleccionar</mat-label>
+          <mat-select id="fumar" formControlName="fumar">
+            <mat-option value="NO FUMA">NO FUMA</mat-option>
+            <mat-option value="FUMADOR PASIVO">FUMADOR PASIVO</mat-option>
+            <mat-option value="EXFUMADOR (dejó de fumar hace 6 meses)">EXFUMADOR (dejó de fumar hace 6 meses)</mat-option>
+            <mat-option value="FUMADOR (al menos 1 en los últimos 6 meses)">FUMADOR (al menos 1 en los últimos 6 meses)</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="sustancias">
+        <label class="label-sustancias" for="sustancias">CONSUME OTRAS SUSTANCIAS ESTUPEFACIENTES</label>
+        <mat-form-field class="custom-inputsustancias">
+          <mat-label>Seleccionar</mat-label>
+          <mat-select id="sustancias" formControlName="sustancias">
+            <mat-option value="SI">SI</mat-option>
+            <mat-option value="NO">NO</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="ejercicio">
+        <label class="label-ejercicio" for="ejercicio">EJERCICIO (¿al menos 30 minutos diarios?)</label>
+        <mat-form-field class="custom-inputejercicio">
+          <mat-label>Seleccionar</mat-label>
+          <mat-select id="ejercicio" formControlName="ejercicio">
+            <mat-option value="SI">SI</mat-option>
+            <mat-option value="NO">NO</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="alcoholismo">
+        <label class="label-alcoholismo" for="alcoholismo">ALCOHOLISMO</label>
+        <mat-form-field class="custom-inputalcoholismo">
+          <mat-label>Seleccionar</mat-label>
+          <mat-select id="alcoholismo" formControlName="alcoholismo">
+            <mat-option value="SI">SI</mat-option>
+            <mat-option value="NO">NO</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="antecedentes">
+        <label class="label-antecedentes" for="antecedentes">ANTECEDENTES FAMILIARES</label>
+        <mat-form-field class="custom-inputantecedentes">
+          <mat-label>Seleccionar</mat-label>
+          <mat-select id="antecedentes" formControlName="antecedentes">
+            <mat-option value="SI">SI</mat-option>
+            <mat-option value="NO">NO</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="container3">
+      <h3>ANTECEDENTES FAMILIARES</h3>
+      <div class="diabetes">
+        <label class="label-diabetes" for="diabetes">DIABETES(Z833)</label>
+        <mat-form-field class="custom-inputdiabetes">
+          <mat-label>Seleccionar</mat-label>
+          <mat-select id="diabetes" formControlName="diabetes">
+            <mat-option value="NO">NO</mat-option>
+            <mat-option value="ABUELOS, TIOS, PRIMOS HERMANOS">ABUELOS, TIOS, PRIMOS HERMANOS</mat-option>
+            <mat-option value="PAPAS, HERMANOS O HIJOS">PAPAS, HERMANOS O HIJOS</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="patologia">
+        <label class="label-patologia" for="patologia">PATOLOGÍA CARDÍACA O HIPERTENSIÓN</label>
+        <mat-form-field class="custom-inputpatologia">
+          <mat-label>Seleccionar</mat-label>
+          <mat-select id="patologia" formControlName="patologia">
+            <mat-option value="SI">SI</mat-option>
+            <mat-option value="NO">NO</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="cancer">
+        <label class="label-cancer" for="cancer">CÁNCER</label>
+        <mat-form-field class="custom-inputcancer">
+          <mat-label>Seleccionar</mat-label>
+          <mat-select id="cancer" formControlName="cancer">
+            <mat-option value="SI">SI</mat-option>
+            <mat-option value="NO">NO</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="tiroidea">
+        <label class="label-tiroidea" for="tiroidea">PATOLOGÍA TIROIDEA</label>
+        <mat-form-field class="custom-inputtiroidea">
+          <mat-label>Seleccionar</mat-label>
+          <mat-select id="tiroidea" formControlName="tiroidea">
+            <mat-option value="SI">SI</mat-option>
+            <mat-option value="NO">NO</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="sobrepeso">
+        <label class="label-sobrepeso" for="sobrepeso">SOBREPESO U OBESIDAD</label>
+        <mat-form-field class="custom-inputsobrepeso">
+          <mat-label>Seleccionar</mat-label>
+          <mat-select id="sobrepeso" formControlName="sobrepeso">
+            <mat-option value="SI">SI</mat-option>
+            <mat-option value="NO">NO</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="otros">
+        <label class="label-otros" for="otros">OTROS</label>
+        <mat-form-field class="custom-inputotros">
+          <mat-label>Seleccionar</mat-label>
+          <mat-select id="otros" formControlName="otros">
+            <mat-option value="SI">SI</mat-option>
+            <mat-option value="NO">NO</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <button type="submit" mat-raised-button color="accent" class="custom-button"
+      style="background-color: #7CADDC; color: #222940; width: 200px;" [disabled]="inicio.invalid">ENVIAR</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,620 @@
+h1 {
+    width: 712px;
+    height: 170px;
+    top: 117px;
+    left: 364px;
+
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 82.03px;
+
+    color: #222940;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.mensaje {
+    width: 918px;
+    height: 84px;
+    top: 224px;
+    left: 261px;
+
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28.13px;
+    align-items: center;
+
+    color: #484848;
+    margin: -150px auto;
+    text-align: center;
+}
+
+.cedula {
+    position: absolute;
+    left: 460px;
+    bottom: 490PX;
+}
+
+.label-cedula {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputc {
+    width: 320px;
+}
+
+.nombre {
+    position: absolute;
+    left: 460px;
+    bottom: 370PX;
+}
+
+.label-nombre {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputn {
+    width: 952px;
+}
+
+.atencion {
+    position: absolute;
+    left: 1090px;
+    bottom: 490PX;
+}
+
+.label-atencion {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputa {
+    width: 320px;
+}
+
+.afiliacion {
+    position: absolute;
+    left: 460px;
+    bottom: 260PX;
+}
+
+.label-afiliacion {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputaf {
+    width: 320px;
+}
+
+.sexo {
+    position: absolute;
+    left: 840px;
+    bottom: 260PX;
+}
+
+.label-sexo {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputsexo {
+    width: 245px;
+}
+
+.edad {
+    position: absolute;
+    left: 1140px;
+    bottom: 260PX;
+}
+
+.label-edad {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputedad {
+    width: 270px;
+}
+
+
+.fechaNacimiento {
+    position: absolute;
+    left: 460px;
+    bottom: 120PX;
+}
+
+.label-fechaNacimiento {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.demo-inline-calendar-card {
+    bottom: -250PX;
+    width: 300px;
+}
+
+.estado {
+    position: absolute;
+    left: 1000px;
+    bottom: 85PX;
+}
+
+.label-estado {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputestado {
+    width: 415px;
+}
+
+.laboral {
+    position: absolute;
+    left: 1000px;
+    bottom: -25PX;
+}
+
+.label-laboral {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputlaboral {
+    width: 415px;
+}
+
+.parroquia {
+    position: absolute;
+    left: 1000px;
+    bottom: -135PX;
+}
+
+.label-parroquia {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputparroquia {
+    width: 415px;
+}
+
+.calles {
+    position: absolute;
+    left: 460px;
+    bottom: -280PX;
+}
+
+.label-calles {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputcalles {
+    width: 952px;
+}
+
+.numcasa {
+    position: absolute;
+    left: 460px;
+    bottom: -390PX;
+}
+
+.label-numcasa {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputnumcasa {
+    width: 450px;
+}
+
+.telefono {
+    position: absolute;
+    left: 460px;
+    bottom: -500PX;
+}
+
+.label-telefono {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputtelefono {
+    width: 450px;
+}
+
+.mail {
+    position: absolute;
+    left: 1000px;
+    bottom: -390PX;
+}
+
+.label-mail {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputmail {
+    width: 415px;
+}
+
+.escolaridad {
+    position: absolute;
+    left: 1000px;
+    bottom: -500PX;
+}
+
+.label-escolaridad {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputescolaridad {
+    width: 415px;
+}
+
+.institucion {
+    position: absolute;
+    left: 460px;
+    bottom: -620PX;
+}
+
+.label-institucion {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputinstitucion {
+    width: 510px;
+}
+
+.ocupacion {
+    position: absolute;
+    left: 1000px;
+    bottom: -620PX;
+}
+
+.label-ocupacion {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputocupacion {
+    width: 415px;
+}
+
+.guia {
+    position: absolute;
+    left: 460px;
+    bottom: -740PX;
+}
+
+.label-guia {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputguia {
+    width: 350px;
+}
+
+
+.alimentacion {
+    position: absolute;
+    left: 460px;
+    bottom: -990PX;
+}
+
+.label-alimentacion {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputalimentacion {
+    width: 490px;
+}
+
+
+.fumar {
+    position: absolute;
+    left: 460px;
+    bottom: -1100PX;
+}
+
+.label-fumar {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputfumar {
+    width: 490px;
+}
+
+.sustancias {
+    position: absolute;
+    left: 460px;
+    bottom: -1210PX;
+}
+
+.label-sustancias {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputsustancias {
+    width: 490px;
+}
+
+
+.ejercicio {
+    position: absolute;
+    left: 1000px;
+    bottom: -990PX;
+}
+
+.label-ejercicio {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputejercicio {
+    width: 415px;
+}
+
+.alcoholismo {
+    position: absolute;
+    left: 1000px;
+    bottom: -1100PX;
+}
+
+.label-alcoholismo {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputalcoholismo {
+    width: 415px;
+}
+
+.antecedentes {
+    position: absolute;
+    left: 1000px;
+    bottom: -1210PX;
+}
+
+.label-antecedentes {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputantecedentes {
+    width: 415px;
+}
+
+
+
+.diabetes {
+    position: absolute;
+    left: 460px;
+    bottom: -1420PX;
+}
+
+.label-diabetes {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputdiabetes {
+    width: 490px;
+}
+
+h3 {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 82.03px;
+    color: #222940;
+    margin-top: 400px;
+    text-align: center;
+}
+
+h2 {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 82.03px;
+    color: #222940;
+    margin-top: 1500px;
+    text-align: center;
+}
+
+.patologia {
+    position: absolute;
+    left: 460px;
+    bottom: -1530PX;
+}
+
+.label-patologia {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputpatologia {
+    width: 490px;
+}
+
+.cancer {
+    position: absolute;
+    left: 460px;
+    bottom: -1635PX;
+}
+
+.label-cancer {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputcancer {
+    width: 490px;
+}
+
+.tiroidea {
+    position: absolute;
+    left: 1000px;
+    bottom: -1420PX;
+}
+
+.label-tiroidea {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputtiroidea {
+    width: 415px;
+}
+
+.sobrepeso {
+    position: absolute;
+    left: 1000px;
+    bottom: -1530PX;
+}
+
+.label-sobrepeso {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputsobrepeso {
+    width: 415px;
+}
+
+.otros {
+    position: absolute;
+    left: 1000px;
+    bottom: -1635PX;
+}
+
+.label-otros {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputotros {
+    width: 415px;
+}
+
+.custom-button {
+    margin-left: 850px;
+    ;
+    margin-top: 340px;
+    font-size: 25px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.mat-toolbar {
+    background-color: #222940;
+    color: white;
+    /* Cambia el color del texto si es necesario para asegurarte de que sea legible */
+}
+
+.mat-form-field {
+    margin-right: 12px;
+  }

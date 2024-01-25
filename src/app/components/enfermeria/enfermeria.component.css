@@ -1,0 +1,140 @@
+h1 {
+    width: 712px;
+    height: 170px;
+    top: 117px;
+    left: 364px;
+
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 82.03px;
+
+    color: #222940;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.mensaje {
+    width: 918px;
+    height: 84px;
+    top: 224px;
+    left: 261px;
+
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28.13px;
+    align-items: center;
+
+    color: #484848;
+    margin: -150px auto;
+    text-align: center;
+}
+
+
+.cedula {
+    position: absolute;
+    left: 360px;
+    bottom: 490PX;
+}
+
+.label-cedula {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputc {
+    width: 450px;
+}
+
+
+.peso {
+    position: absolute;
+    left: 360px;;
+    bottom: 330PX;
+}
+
+.label-peso {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputpeso {
+    width: 520px;
+}
+
+
+.talla {
+    position: absolute;
+    left: 360px;;
+    bottom: 165PX;
+}
+
+.label-talla {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputtalla {
+    width: 520px;
+}
+
+.cintura {
+    position: absolute;
+    left: 1010px;
+    bottom: 330PX;
+}
+
+.label-cintura {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputcintura {
+    width: 520px;
+}
+
+.presion {
+    position: absolute;
+    left: 1010px;
+    bottom: 165PX;
+}
+
+.label-presion {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputpresion {
+    width: 520px;
+}
+
+.custom-button {
+    margin-left: 850px;
+    margin-top: 680px;
+    font-size: 25px;
+}
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.mat-toolbar {
+    background-color: #222940;
+    color: white;
+    /* Cambia el color del texto si es necesario para asegurarte de que sea legible */
+}

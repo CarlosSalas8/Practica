@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<body>
+    <mat-toolbar>
+        <img src="../../../assets/img/Imagen1.png" width="130" height="70" style="margin-right: 30px">
+        <button mat-button style="margin-right: 30px">Inicio</button>
+        <button mat-button>Ingresar Datos</button>
+        <span style="flex: 1;"></span>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>person</mat-icon>
+        </button>
+    </mat-toolbar>
+    <form [formGroup]="inicio" (ngSubmit)="agregarInicio()">
+        <div class="container">
+            <h1>ENFERMERÍA</h1>
+            <div class="mensaje">
+                <p>La información recolectada en la encuesta servirá para mejorar las prestaciones de salud del IESS
+                    Loja.
+                    La información obtenida no revelara sus datos personales ni las respuestas individuales.</p>
+            </div>
+            <div class="cedula">
+                <label class="label-cedula" for="cedula">NÚMERO DE CÉDULA</label>
+                <mat-form-field class="custom-inputc">
+                    <mat-label>Número de cédula</mat-label>
+                    <input matInput id="cedula" formControlName="cedula">
+                </mat-form-field>
+            </div>
+            <div class="peso">
+                <label class="label-peso" for="peso">PESO (Kg) <br> EJEMPLO 75.4</label>
+                <mat-form-field class="custom-inputpeso">
+                    <mat-label>Peso(kg)</mat-label>
+                    <input matInput id="peso" formControlName="peso">
+                </mat-form-field>
+            </div>
+            <div class="talla">
+                <label class="label-talla" for="talla">TALLA (m) <br> EJEMPLO 1.75</label>
+                <mat-form-field class="custom-inputtalla">
+                    <mat-label>Talla(m)</mat-label>
+                    <input matInput id="talla" formControlName="talla">
+                </mat-form-field>
+            </div>
+            <div class="cintura">
+                <label class="label-cintura" for="cintura">CINTURA ABDOMINAL <br>
+                    MUJERES > 80 cm <br>
+                    HOMBRES > 94 cm</label>
+                <mat-form-field class="custom-inputcintura">
+                    <mat-label>Cintura Abdominal</mat-label>
+                    <input matInput id="cintura" formControlName="cintura">
+                </mat-form-field>
+            </div>
+            <div class="presion">
+                <label class="label-presion" for="presion">PRESIÓN SANGUÍNEA <br>
+                    > 130/ > 85 mmHg o hipertensión de tratamiento <br>
+                    Usar formato XXX/XX</label>
+                <mat-form-field class="custom-inputpresion">
+                    <mat-label>Presión Sanguínea</mat-label>
+                    <input matInput id="presion" formControlName="presion">
+                </mat-form-field>
+            </div>
+            <button type="submit" mat-raised-button color="accent" class="custom-button"
+                style="background-color: #7CADDC; color: #222940; width: 200px;"
+                [disabled]="inicio.invalid">ENVIAR</button>
+        </div>
+    </form>
+</body>
+</html>

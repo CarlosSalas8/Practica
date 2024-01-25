@@ -1,0 +1,21 @@
+{
+  "targets": {
+    "iess-c726c": {
+      "hosting": {
+        "Practica": [
+          "iess-c726c"
+        ]
+      }
+    },
+    "practica-81b57": {
+      "hosting": {
+        "Practica": [
+          "practica-81b57"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "iess-c726c"
+  }
+}

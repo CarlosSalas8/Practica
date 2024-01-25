@@ -1,0 +1,56 @@
+<div class="login">
+    <span>HISTORIAS</span>
+    <span>CLINICAS</span>
+</div>
+
+<div class="body">
+    <form [formGroup]="form" (ngSubmit)="ingresar()">
+        <div class="right-side">
+            <h1 class="login-title">Iniciar Sesión</h1>
+
+            <div class="user-info">
+                <div class="form-section">
+                    <h2 class="user-title">Usuario</h2>
+                    <mat-form-field class="email-field">
+                        <mat-label>Correo Electrónico</mat-label>
+                        <input type="text" matInput [errorStateMatcher]="matcher" formControlName="usuario"
+                            placeholder="Ex. pat@example.com" style="width: 250px;">
+                        <mat-hint>¡Los errores aparecen instantáneamente!</mat-hint>
+                        <mat-error *ngIf="emailFormControl.hasError('required')">
+                            Correo Electrónico <strong>requerido</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <br>
+                <div class="form-section">
+                    <h2 class="password-title">Contraseña</h2>
+                    <mat-form-field>
+                        <mat-label>Ingresa tu contraseña</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" formControlName="pasword">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <button type="submit" mat-raised-button color="accent"
+                style="background-color: #7CADDC; color: #484848; width: 250px;"
+                [disabled]="form.invalid">Continuar</button>
+            <br>
+            <button mat-raised-button color="accent"
+                style="background-color: #7CADDC; color: #484848; width: 250px;">Iniciar Sesión Google</button>
+            <br>
+            <div style="margin-top: 10px; font-size: 14px;">
+                <span style="color: #757575;">¿No tienes cuenta?</span>
+                <a href="#" style="color: #7CADDC;"> Crea tu cuenta</a>
+            </div>
+            <br>
+            <mat-progress-bar mode="indeterminate" *ngIf="showProgressBar"></mat-progress-bar>
+        </div>
+
+    </form>
+
+</div>
+
