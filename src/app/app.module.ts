@@ -11,13 +11,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/enviroment.prod';
 import { ListInicioComponent } from './components/list-inicio/list-inicio.component';
+import { ListEnfermeriaComponent } from './components/list-enfermeria/list-enfermeria.component';
+import { ListConsultaComponent } from './components/list-consulta/list-consulta.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ListInicioComponent
+    ListInicioComponent,
+    ListEnfermeriaComponent,
+    ListConsultaComponent
     
   ],
   imports: [

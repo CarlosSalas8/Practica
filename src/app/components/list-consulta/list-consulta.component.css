@@ -1,9 +1,6 @@
 h1 {
-    width: 712px;
-    height: 170px;
-    top: 117px;
-    left: 364px;
 
+    height: 170px;
     font-family: Roboto;
     font-weight: 400;
     font-size: 70px;
@@ -21,7 +18,7 @@ h1 {
     left: 261px;
 
     font-family: Roboto;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 24px;
     line-height: 28.13px;
     align-items: center;
@@ -34,7 +31,9 @@ h1 {
 .cedula {
     position: absolute;
     left: 360px;
-    bottom: 490PX;
+    bottom: 450PX;
+    width: 952px;
+    font-weight: 600;
 }
 
 .label-cedula {
@@ -45,14 +44,14 @@ h1 {
     font: Roboto;
 }
 
-.custom-inputc {
-    width: 450px;
-}
+
 
 .mujer {
     position: absolute;
     left: 360px;
     bottom: 270PX;
+    width: 952px;
+    font-weight: 600;
 }
 
 .label-mujer {
@@ -63,14 +62,14 @@ h1 {
     font: Roboto;
 }
 
-.custom-inputmujer {
-    width: 450px;
-}
+
 
 .enfermedades {
     position: absolute;
     left: 1060px;
     bottom: 270PX;
+    width: 952px;
+    font-weight: 600;
 }
 
 .label-enfermedades {
@@ -81,17 +80,15 @@ h1 {
     font: Roboto;
 }
 
-.custom-inputenfermedades {
-    width: 450px;
-}
+
 
 h2 {
     font-family: Roboto;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 35px;
     line-height: 82.03px;
     color: #222940;
-    margin-top: 520px;
+    margin-top: 490px;
     text-align: center;
 }
 
@@ -99,6 +96,8 @@ h2 {
     position: absolute;
     left: 360px;
     bottom: -25PX;
+    width: 952px;
+    font-weight: 600;
 }
 
 .label-hipotirodismo {
@@ -109,15 +108,15 @@ h2 {
     font: Roboto;
 }
 
-.custom-inputhipotirodismo {
-    width: 450px;
-}
+
 
 
 .diabetes {
     position: absolute;
     left: 360px;
     bottom: -235PX;
+    width: 952px;
+    font-weight: 600;
 }
 
 .label-diabetes {
@@ -128,14 +127,14 @@ h2 {
     font: Roboto;
 }
 
-.custom-inputdiabetes {
-    width: 450px;
-}
+
 
 .arterial {
     position: absolute;
     left: 360px;
     bottom: -345PX;
+    width: 952px;
+    font-weight: 600;
 }
 
 .label-arterial {
@@ -146,14 +145,14 @@ h2 {
     font: Roboto;
 }
 
-.custom-inputarterial {
-    width: 450px;
-}
+
 
 .cronica {
     position: absolute;
     left: 360px;
     bottom: -400PX;
+    width: 952px;
+    font-weight: 600;
 }
 
 .label-cronica {
@@ -164,14 +163,14 @@ h2 {
     font: Roboto;
 }
 
-.custom-inputcronica {
-    width: 450px;
-}
+
 
 .cancer {
     position: absolute;
     left: 360px;
     bottom: -530PX;
+    width: 952px;
+    font-weight: 600;
 }
 
 .label-cancer {
@@ -182,14 +181,14 @@ h2 {
     font: Roboto;
 }
 
-.custom-inputcancer {
-    width: 450px;
-}
+
 
 .obesidad {
     position: absolute;
     left: 1060px;
     bottom: -25PX;
+    width: 952px;
+    font-weight: 600;
 }
 
 .label-obesidad {
@@ -200,14 +199,14 @@ h2 {
     font: Roboto;
 }
 
-.custom-inputobesidad {
-    width: 450px;
-}
+
 
 .dislipidemias {
     position: absolute;
     left: 1060px;
     bottom: -235PX;
+    width: 952px;
+    font-weight: 600;
 }
 
 .label-dislipidemias {
@@ -218,14 +217,14 @@ h2 {
     font: Roboto;
 }
 
-.custom-inputdislipidemias {
-    width: 450px;
-}
+
 
 .personales {
     position: absolute;
     left: 1060px;
     bottom: -400PX;
+    width: 952px;
+    font-weight: 600;
 }
 
 .label-personales {
@@ -236,14 +235,14 @@ h2 {
     font: Roboto;
 }
 
-.custom-inputpersonales {
-    width: 450px;
-}
+
 
 .otros {
     position: absolute;
     left: 1060px;
     bottom: -530PX;
+    width: 952px;
+    font-weight: 600;
 }
 
 .label-otros {
@@ -254,17 +253,15 @@ h2 {
     font: Roboto;
 }
 
-.custom-inputotros {
-    width: 450px;
-}
+
 
 h3 {
     font-family: Roboto;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 35px;
     line-height: 82.03px;
     color: #222940;
-    margin-top: 800px;
+    margin-top: 700px;
     text-align: center;
 }
 
@@ -272,6 +269,8 @@ h3 {
     position: absolute;
     left: 1060px;
     bottom: -860PX;
+    width: 952px;
+    font-weight: 600;
 }
 
 .label-valoracion {
@@ -282,9 +281,22 @@ h3 {
     font: Roboto;
 }
 
-.custom-inputvaloracion {
-    width: 450px;
+.otrosSelect {
+    position: absolute;
+    left: 360px;
+    bottom: -950px;
+    width: 952px;
+    font-weight: 600;
 }
+
+.label-otrosSelect {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
 
 
 .cie10 {
@@ -292,28 +304,15 @@ h3 {
     vertical-align: top;
     margin-left: 360px;
     margin-top: 20px;
+    width: 952px;
+    font-weight: 600;
 }
 .custom-button {
     margin-left: 850px;;
-    margin-top: 50px;
+    margin-top: 150px;
     font-size: 25px;
 }
 
-.custom-button2 {
-    margin-left: 1180px;;
-    margin-top: -1120px;
-    font-size: 11px;
-}
-
-h4 {
-    font-family: Roboto;
-    font-weight: 400;
-    font-size: 12px;
-    color: #222940;
-    margin-top: -540px;
-    margin-left: 750px;
-    text-align: center;
-}
 .example-spacer {
     flex: 1 1 auto;
 }
@@ -322,4 +321,8 @@ h4 {
     background-color: #222940;
     color: white;
     /* Cambia el color del texto si es necesario para asegurarte de que sea legible */
+}
+
+.linea-inferior {
+    border-bottom: 1px solid #000;
 }

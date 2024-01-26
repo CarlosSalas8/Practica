@@ -32,7 +32,7 @@ export class LoginComponent {
 
 
 
-  constructor(private fb: FormBuilder,private _snackBar: MatSnackBar, private router:Router ){
+  constructor(private fb: FormBuilder, private _snackBar: MatSnackBar, private router: Router) {
     this.form = this.fb.group({
       usuario: ['', Validators.required],
       pasword: ['', Validators.required]
@@ -43,20 +43,17 @@ export class LoginComponent {
   ingresar() {
     const usuario = this.form.value.usuario;
     const pasword = this.form.value.pasword;
-  
+
     console.log(usuario);
     console.log(pasword);
-  
-    if (usuario == 'carlos' && pasword == 'carlos') {
-      // Redireccionar a 'inicio'
-      this.fakeloading('pagina-principal');
-    } else if (usuario == 'carlos' && pasword == 'salas') {
+
+    if (usuario == 'usuario' && pasword == '123') {
       // Redireccionar a 'inicio'
       this.fakeloading('inicio');
-    } else if (usuario == 'carlos' && pasword == 'churo') {
+    } else if (usuario == 'usuario2' && pasword == '123') {
       // Redireccionar a 'enfermeria'
       this.fakeloading('enfermeria');
-    } else if (usuario == 'carlos' && pasword == 'jaramillo') {
+    } else if (usuario == 'usuario3' && pasword == '123') {
       // Redireccionar a 'consulta'
       this.fakeloading('consulta');
     } else {
@@ -65,16 +62,16 @@ export class LoginComponent {
       this.form.reset();
     }
   }
-  
+
   fakeloading(route: string) {
     this.showProgressBar = true;
     setTimeout(() => {
       this.router.navigate([route]);
     }, 1500);
   }
-  
-  error(){
-    this._snackBar.open('Usuario o contraseña no validos','',{
+
+  error() {
+    this._snackBar.open('Usuario o contraseña no validos', '', {
       duration: 5000,
       horizontalPosition: 'center',
       verticalPosition: 'bottom'

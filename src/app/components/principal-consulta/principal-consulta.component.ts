@@ -3,20 +3,19 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { Usuario } from 'src/app/interfaces/usuario';
+import { Consulta } from 'src/app/interfaces/consulta';
 import { SharedService } from 'src/app/services/shared.service';
 
-
 @Component({
-  selector: 'app-pagina-principal',
-  templateUrl: './pagina-principal.component.html',
-  styleUrls: ['./pagina-principal.component.css']
+  selector: 'app-principal-consulta',
+  templateUrl: './principal-consulta.component.html',
+  styleUrls: ['./principal-consulta.component.css']
 })
-export class PaginaPrincipalComponent implements OnInit {
+export class PrincipalConsultaComponent implements OnInit {
 
-  listUsuarios: Usuario[] = [];
+  listUsuarios: Consulta[] = [];
 
-  displayedColumns: string[] = ['cedula', 'nombres', 'fechaIngreso', 'fechaUltima', 'historial'];
+  displayedColumns: string[] = ['cedula', 'fechaIngreso', 'fechaUltima', 'historial'];
 
   dataSource = new MatTableDataSource(this.listUsuarios);
 
@@ -29,11 +28,11 @@ export class PaginaPrincipalComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getDatosGenerales();
+    this.getDatosEnfermeria();
   }
 
-  getDatosGenerales() {
-    this._sharedService.mostrarDatosGenerales().subscribe(data => {
+  getDatosEnfermeria() {
+    this._sharedService.mostrarDatosConsulta().subscribe(data => {
       this.listUsuarios = [];
       data.forEach((element: any) => {
 
@@ -71,7 +70,7 @@ export class PaginaPrincipalComponent implements OnInit {
   revisarUsuario(cedula: any) {
     this._sharedService.actualizarCedula(cedula)
     console.log(cedula);
-    this.router.navigate(['/list-inicio', { usuario: cedula }]);
+    this.router.navigate(['/list-consulta', { usuario: cedula }]);
   }
 
 }

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<body>
+    <mat-toolbar>
+        <img src="../../../assets/img/Imagen1.png" width="130" height="70" style="margin-right: 30px">
+        <button mat-button style="margin-right: 30px" [routerLink]="'/principal-consulta'">Inicio</button>
+        <button mat-button [routerLink]="'/consulta'">Ingresar Datos</button>
+        <span style="flex: 1;"></span>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>person</mat-icon>
+        </button>
+    </mat-toolbar>
+    <form class="data-item">
+            <div class="container">
+                <h1>PRIMERA CONSULTA</h1>
+                <div class="mensaje">
+                    <p>La información recolectada en la encuesta servirá para mejorar las prestaciones de salud del IESS
+                        Loja.
+                        La información obtenida no revelara sus datos personales ni las respuestas individuales.</p>
+                </div>
+                <div class="cedula">
+                    <label class="label-cedula" for="cedula">NÚMERO DE CÉDULA<br><span class="linea-inferior">{{
+                            userData?.cedula }}</span></label>
+                </div>
+
+                <div class="mujer">
+                    <label class="label-mujer" for="mujer">MUJER <br>
+                        - HTA EN EL EMBARAZO <br>
+                        - DIABETES GESTACIONAL SÍNDROME DE OVARIO POLIQUISTICO <br>
+                        - MENOPAUSIA <br>
+                        - TRATAMIENTO HORMONAL <br>
+                        Si detecta alguna señalar SI<br><span class="linea-inferior">{{ userData?.mujer
+                            }}</span></label>
+                </div>
+
+
+                <div class="enfermedades">
+                    <label class="label-enfermedades" for="enfermedades">ENFERMEDADES INFLAMATORIAS <br>
+                        - PSORIASIS <br>
+                        - LUPUS ERITEMATOSO SISTEMICO <br>
+                        - HIV <br>
+                        - NEOPLASIAS <br>
+                        Si detecta alguna señalar SI<br><span class="linea-inferior">{{ userData?.enfermedades
+                            }}</span></label>
+                </div>
+
+                <h2>ANTECEDENTES PATOLÓGICOS PERSONALES</h2>
+
+                <div class="hipotirodismo">
+                    <label class="label-hipotirodismo" for="hipotirodismo">ANTECEDENTES PATOLÓGICOS PERSONALES DE
+                        HIPOTIROIDISMO
+                        (E039)<br><span class="linea-inferior">{{ userData?.hipotirodismo }}</span></label>
+                </div>
+
+
+
+                <div class="diabetes">
+                    <label class="label-diabetes" for="diabetes">ANTECEDENTES PATOLOGICOS PERSONALES DE DIABETES <br>
+                        - E10 (Diabetes mellitus insulinodependiente) <br>
+                        - E11 (Diabetes mellitus no insulinodependiente)<br><span class="linea-inferior">{{
+                            userData?.diabetes }}</span></label>
+                </div>
+
+
+                <div class="cronica">
+                    <label class="label-cronica" for="cronica">ANTECEDENTES DE INSUFICIENCIA RENAL CRONICA
+                        (N188)<br><span class="linea-inferior">{{ userData?.cronica }}</span></label>
+                </div>
+
+                <div class="cancer">
+                    <label class="label-cancer" for="cancer">ANTECEDENTES PATOLOGICOS PERSONALES DE CANCER (USAR
+                        CIE10)<br><span class="linea-inferior">{{ userData?.cancer }}</span></label>
+                </div>
+
+                <div class="obesidad">
+                    <label class="label-obesidad" for="obesidad">ANTECEDENTES DE OBESIDAD (E66)<br><span
+                            class="linea-inferior">{{ userData?.obesidad }}</span></label>
+                </div>
+
+                <div class="dislipidemias">
+                    <label class="label-dislipidemias" for="dislipidemias">ANTECEDENTES PATOLOGICOS PERSONALES DE
+                        DISLIPIDEMIAS
+                        <br>
+                        - E785 (hiperlipidemia no especificada) <br>
+                        - E780 (hipercolesterolemia pura) <br>
+                        - E781 (Hipergliceridemia pura) <br>
+                        - E782 (hiperlipidemia mixta)<br><span class="linea-inferior">{{ userData?.dislipidemias
+                            }}</span></label>
+                </div>
+
+                <div class="personales">
+                    <label class="label-personales" for="personales">ANTECEDENTES PATOLÓGICOS PERSONALES DE: <br>
+                        - INFARTO AGUDO DE MIOCARDIO (I21) <br>
+                        - ACCIDENTE CEREBRO VASCULAR (I64)<br><span class="linea-inferior">{{ userData?.personales
+                            }}</span></label>
+
+                </div>
+
+                <div class="otros">
+                    <label class="label-otros" for="otros">OTROS ANTECEDENTES PERSONALES<br><span
+                            class="linea-inferior">{{
+                            userData?.otros }}</span></label>
+                </div>
+
+                <h3>ENFERMEDAD ACTUAL Y EXAMEN FÍSICO</h3>
+                <div class="valoracion">
+                    <label class="label-valoracion" for="valoracion">VALORACIÓN ODONTOLOGICA<br><span
+                            class="linea-inferior">{{ userData?.valoracion }}</span></label>
+                </div>
+                <div class="cie10">
+                    <label class="label-cie10" for="cie10">DIAGNÓSTICO INICIAL <br>
+                        (FAVOR USAR CIE10) <br>
+                        DESDE PRINCIPAL A SECUNDARIOS EN ORDEN DESCENDENTE 4 DÍGITOS <br>
+                        Ejemplo: E782 - E784 - E110 - E140<br><span class="linea-inferior">{{
+                            userData?.cie10 }}</span></label>
+
+                    <div class="otrosSelect">
+                        <label class="label-otrosSelect" for="otrosSelect">Otro<br><span class="linea-inferior">{{
+                                userData?.otrosSelect }}</span></label>
+                    </div>
+
+                </div>
+
+
+                <button type="submit" mat-raised-button color="accent" class="custom-button"
+                    style="background-color: #222940; color: #FFFFFF; width: 200px;"
+                    [routerLink]="'/principal-consulta'">VOLVER</button>
+
+            </div>
+    </form>
+</body>
+
+</html>

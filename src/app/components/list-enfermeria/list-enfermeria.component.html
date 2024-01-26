@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<body>
+    <mat-toolbar>
+        <img src="../../../assets/img/Imagen1.png" width="130" height="70" style="margin-right: 30px">
+        <button mat-button style="margin-right: 30px" [routerLink]="'/principal-enfermeria'">Inicio</button>
+        <button mat-button [routerLink]="'/enfermeria'">Ingresar Datos</button>
+        <span style="flex: 1;"></span>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>person</mat-icon>
+        </button>
+    </mat-toolbar>
+    <form class="data-item">
+        <div class="container">
+            <h1>ENFERMERÍA</h1>
+            <div class="mensaje">
+                <p>La información recolectada en la encuesta servirá para mejorar las prestaciones de salud del IESS
+                    Loja.
+                    La información obtenida no revelara sus datos personales ni las respuestas individuales.</p>
+            </div>
+
+            <div class="cedula">
+                <label class="label-cedula" for="cedula">NÚMERO DE CÉDULA<br><span
+                    class="linea-inferior">{{ userData?.cedula }}</span></label>
+            </div>
+
+            <div class="nombre">
+                <label class="label-nombre" for="nombre">NOMBRES Y APELLIDOS<br><span
+                    class="linea-inferior">{{ userData?.nombre }}</span></label>
+            </div>
+
+            <div class="peso">
+                <label class="label-peso" for="peso">PESO (Kg) <br> EJEMPLO 75.4<br><span
+          class="linea-inferior">{{ userData?.peso }}</span></label>
+
+            </div>
+            <div class="talla">
+                <label class="label-talla" for="talla">TALLA (m) <br> EJEMPLO 1.75<br><span
+                    class="linea-inferior">{{ userData?.talla }}</span></label>
+            </div>
+            <div class="cintura">
+                <label class="label-cintura" for="cintura">CINTURA ABDOMINAL <br>
+                    MUJERES > 80 cm <br>
+                    HOMBRES > 94 cm<br><span
+                    class="linea-inferior">{{ userData?.cintura }}</span></label>
+
+            </div>
+            <div class="presion">
+                <label class="label-presion" for="presion">PRESIÓN SANGUÍNEA <br>
+                    > 130/ > 85 mmHg o hipertensión de tratamiento <br>
+                    Usar formato XXX/XX<br><span
+                    class="linea-inferior">{{ userData?.presion }}</span></label>
+            </div>
+            <button type="submit" mat-raised-button color="accent" class="custom-button"
+    style="background-color: #222940; color: #FFFFFF; width: 200px;" [routerLink]="'/principal-enfermeria'">VOLVER</button>
+        </div>
+    </form>
+</body>
+
+</html>

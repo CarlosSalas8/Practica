@@ -4,8 +4,8 @@
 <body>
     <mat-toolbar>
         <img src="../../../assets/img/Imagen1.png" width="130" height="70" style="margin-right: 30px">
-        <button mat-button style="margin-right: 30px">Inicio</button>
-        <button mat-button>Ingresar Datos</button>
+        <button mat-button style="margin-right: 30px" [routerLink]="'/principal-enfermeria'">Inicio</button>
+        <button mat-button [routerLink]="'/enfermeria'">Ingresar Datos</button>
         <span style="flex: 1;"></span>
         <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
             <mat-icon>person</mat-icon>
@@ -26,18 +26,25 @@
                     <input matInput id="cedula" formControlName="cedula">
                 </mat-form-field>
             </div>
+            <div class="nombre">
+                <label class="label-nombre" for="nombre">NOMBRES Y APELLIDOS</label>
+                <mat-form-field class="custom-inputn">
+                  <mat-label>Nombres y Apellidos</mat-label>
+                  <input matInput id="nombre" formControlName="nombre">
+                </mat-form-field>
+              </div>
             <div class="peso">
                 <label class="label-peso" for="peso">PESO (Kg) <br> EJEMPLO 75.4</label>
                 <mat-form-field class="custom-inputpeso">
                     <mat-label>Peso(kg)</mat-label>
-                    <input matInput id="peso" formControlName="peso">
+                    <input matInput id="peso" formControlName="peso" type="number">
                 </mat-form-field>
             </div>
             <div class="talla">
                 <label class="label-talla" for="talla">TALLA (m) <br> EJEMPLO 1.75</label>
                 <mat-form-field class="custom-inputtalla">
                     <mat-label>Talla(m)</mat-label>
-                    <input matInput id="talla" formControlName="talla">
+                    <input matInput id="talla" formControlName="talla" type="number">
                 </mat-form-field>
             </div>
             <div class="cintura">
@@ -46,7 +53,7 @@
                     HOMBRES > 94 cm</label>
                 <mat-form-field class="custom-inputcintura">
                     <mat-label>Cintura Abdominal</mat-label>
-                    <input matInput id="cintura" formControlName="cintura">
+                    <input matInput id="cintura" formControlName="cintura" type="number">
                 </mat-form-field>
             </div>
             <div class="presion">
