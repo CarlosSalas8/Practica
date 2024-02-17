@@ -1,5 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Enfermeria } from 'src/app/interfaces/enfermeria';
@@ -11,11 +14,23 @@ import { SharedService } from 'src/app/services/shared.service';
   styleUrls: ['./historial-enfermeria.component.css']
 })
 export class HistorialEnfermeriaComponent implements OnInit {
+
+  listUsuarios: Enfermeria[] = [];
+
+  displayedColumns: string[] = ['cedula', 'nombres', 'fechaIngreso', 'historial'];
+
+  dataSource = new MatTableDataSource(this.listUsuarios);
+
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  @ViewChild(MatSort) sort!: MatSort;
   
 
   @Input() usuario!: Enfermeria;
   items: Observable<any[]> | undefined;
   userData: any | undefined;
+  formularios: any[] = [];
   firestore: AngularFirestore;
 
   constructor(firestore: AngularFirestore, private sharedService: SharedService, private router: Router) {
@@ -30,12 +45,32 @@ export class HistorialEnfermeriaComponent implements OnInit {
     });
   }
 
+  cargarUsuario() {
+    this.dataSource = new MatTableDataSource(this.listUsuarios);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+
   mostrarDatosEnfermeriaID(cedula: string) {
-    this.items = this.firestore.collection('enfermeria').valueChanges();
-    // Suponiendo que cedula es única, encuentra al usuario con la cedula correspondiente
-    this.items.subscribe(data => {
+    this.firestore.collection('enfermeria', ref => ref.where('cedula', '==', cedula)).valueChanges()
+    .subscribe((data: any[]) => {
+      this.formularios = data;
       this.userData = data.find(user => user.cedula === cedula);
-      console.log('UserData:', this.userData);
+
+      // Establecer la fecha de ingreso del primer formulario como "FECHA INGRESO"
+      this.userData.fechaIngreso = this.formularios[0]?.fechaIngreso;
+
+      // Establecer la fecha de ingreso del segundo formulario como "ULTIMA FECHA"
+      this.userData.fechaUltima = this.formularios[this.formularios.length - 1]?.fechaIngreso;
+
+      this.dataSource.data = this.formularios;
+      console.log('Formularios del usuario:', this.formularios);
     });
   }
 
@@ -45,9 +80,14 @@ export class HistorialEnfermeriaComponent implements OnInit {
     this.mostrarDatosEnfermeriaID(usuario.cedula); // Llamada adicional si quieres actualizar los datos inmediatamente
   }
 
-  revisarUsuario(cedula: any) {
-    this.sharedService.actualizarCedula(cedula)
-    console.log(cedula);
-    this.router.navigate(['/list-enfermeria', { usuario: cedula }]);
+  
+  revisarUsuario(formulario: any) {
+    // Aquí puedes hacer lo que necesites con el formulario seleccionado
+    console.log('Formulario seleccionado:', formulario);
+
+    this.router.navigate(['/list-enfermeria'], { state: { formulario: formulario } });
+
   }
+
+
 }

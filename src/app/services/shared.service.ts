@@ -11,20 +11,18 @@ export class SharedService {
   private cedulaSource = new BehaviorSubject<string | undefined>(undefined);
   cedulaSeleccionada$ = this.cedulaSource.asObservable();
 
-  actualizarCedula(cedula: string) {
-    this.cedulaSource.next(cedula);
+  actualizarCedula(fechaIngreso: string) {
+    this.cedulaSource.next(fechaIngreso);
   }
-
 
   constructor(private firestore: AngularFirestore) { }
 
   getDatosGenerales(general: any): Promise<any> {
-    const cedula = general.cedula;
-    // Use set with a custom document ID (cedula)
-    return this.firestore.collection('datosGenerales').doc(cedula).set(general)
-      .then(() => {
-        console.log('Document successfully written with ID: ', cedula);
-        return cedula; // You can return the cedula if needed
+
+    return this.firestore.collection('datosGenerales').add(general)
+      .then((docRef) => {
+        console.log('Document successfully written with ID: ', docRef.id);
+        return docRef.id; // You can return the cedula if needed
       })
       .catch((error) => {
         console.error('Error writing document: ', error);
@@ -49,12 +47,11 @@ export class SharedService {
 
 
   getDatosEnfermeria(general: any): Promise<any> {
-    const cedula = general.cedula;
     // Use set with a custom document ID (cedula)
-    return this.firestore.collection('enfermeria').doc(cedula).set(general)
-      .then(() => {
-        console.log('Document successfully written with ID: ', cedula);
-        return cedula; // You can return the cedula if needed
+    return this.firestore.collection('enfermeria').add(general)
+      .then((docRef) => {
+        console.log('Document successfully written with ID: ', docRef.id);
+        return docRef.id; // You can return the cedula if needed
       })
       .catch((error) => {
         console.error('Error writing document: ', error);
@@ -81,10 +78,10 @@ export class SharedService {
   getDatosConsulta(general: any): Promise<any> {
     const cedula = general.cedula;
     // Use set with a custom document ID (cedula)
-    return this.firestore.collection('consulta').doc(cedula).set(general)
-      .then(() => {
-        console.log('Document successfully written with ID: ', cedula);
-        return cedula; // You can return the cedula if needed
+    return this.firestore.collection('consulta').add(general)
+      .then((docRef) => {
+        console.log('Document successfully written with ID: ', docRef);
+        return docRef; // You can return the cedula if needed
       })
       .catch((error) => {
         console.error('Error writing document: ', error);

@@ -31,15 +31,56 @@
                 <label class="label-afiliacion" for="afiliacion">ULTIMA FECHA: <span class="linea-inferior">{{
                         userData?.fechaUltima }}</span></label>
             </div>
-            <button mat-button (click)="revisarUsuario(userData?.cedula)">Revisar Usuario</button>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+
+        <div class="container">
+
+                <div class="mat-elevation-z8">
+                <table mat-table [dataSource]="dataSource" matSort>
+   
+                    <!--- Note that these columns can be defined in any order.
+                          The actual rendered columns are set as a property on the row definition" -->
+    
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="cedula">
+                        <th mat-header-cell *matHeaderCellDef > CÉDULA </th>
+                        <td mat-cell *matCellDef="let element"> {{element.cedula}} </td>
+                    </ng-container>
+    
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="nombres">
+                        <th mat-header-cell *matHeaderCellDef > NOMBRES Y APELLIDOS </th>
+                        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+                    </ng-container>
+    
+                    <!-- Weight Column -->
+                    <ng-container matColumnDef="fechaIngreso">
+                        <th mat-header-cell *matHeaderCellDef> FECHA REGISTRO </th>
+                        <td mat-cell *matCellDef="let element"> {{element.fechaIngreso}} </td>
+                    </ng-container>
+    
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="historial">
+                        <th mat-header-cell *matHeaderCellDef> HISTORIAL CLÍNICO </th>
+                        <td mat-cell *matCellDef="let element">
+                            <div class="button-container">
+                                <button mat-button (click)="revisarUsuario(element)"> REVISAR </button>
+                            </div>
+                        </td>
+                    </ng-container>
+    
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
         </div>
         <button type="submit" mat-raised-button color="accent" class="custom-button"
             style="background-color: #222940; color: #FFFFFF; width: 200px;"
             [routerLink]="'/pagina-principal'">VOLVER</button>
-
-
-
-
 
     </form>
 </body>

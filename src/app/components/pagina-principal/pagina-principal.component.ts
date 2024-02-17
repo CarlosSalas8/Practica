@@ -34,19 +34,32 @@ export class PaginaPrincipalComponent implements OnInit {
 
   getDatosGenerales() {
     this._sharedService.mostrarDatosGenerales().subscribe(data => {
-      this.listUsuarios = [];
-      data.forEach((element: any) => {
+      const usuariosMap = new Map<string, Usuario>();
 
-        this.listUsuarios.push({
+      data.forEach((element: any) => {
+        const usuario: Usuario = {
           id: element.payload.doc.id,
           ...element.payload.doc.data()
-        })
+        };
+
+        if (!usuariosMap.has(usuario.cedula)) {
+          usuariosMap.set(usuario.cedula, usuario);
+        } else {
+          // Si ya existe un usuario con esta cédula, comparar las fechas y actualizar si es necesario
+          const existingUsuario = usuariosMap.get(usuario.cedula)!;
+          if (usuario.fechaIngreso > existingUsuario.fechaIngreso) {
+            existingUsuario.fechaIngreso = usuario.fechaIngreso;
+          }
+          if (usuario.fechaIngreso < existingUsuario.fechaIngreso) {
+            existingUsuario.fechaUltima = usuario.fechaIngreso;
+          }
+        }
       });
 
+      this.listUsuarios = Array.from(usuariosMap.values());
       this.dataSource.data = this.listUsuarios;
-      // Inicializar el ordenamiento
+      this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
-      console.log(this.listUsuarios);
     });
   }
 
@@ -71,7 +84,7 @@ export class PaginaPrincipalComponent implements OnInit {
   revisarUsuario(cedula: any) {
     this._sharedService.actualizarCedula(cedula)
     console.log(cedula);
-    this.router.navigate(['/list-inicio', { usuario: cedula }]);
+    this.router.navigate(['/historial-inicio', { usuario: cedula }]);
   }
 
 }

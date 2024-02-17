@@ -23,23 +23,42 @@ export class ListInicioComponent implements OnInit {
   ngOnInit(): void {
     this.sharedService.cedulaSeleccionada$.subscribe(cedula => {
       if (cedula) {
-        this.mostrarDatosGeneralesID(cedula);
+        const formularioSeleccionado = history.state.formulario;
+        this.mostrarDatosGeneralesID(cedula, formularioSeleccionado);
       }
     });
   }
+  
 
-  mostrarDatosGeneralesID(cedula: string) {
+  mostrarDatosGeneralesID(cedula: string, formularioSeleccionado: any) {
     this.items = this.firestore.collection('datosGenerales').valueChanges();
-    // Suponiendo que cedula es única, encuentra al usuario con la cedula correspondiente
+    // Suponiendo que cedula es única, encuentra todos los formularios relacionados con la cédula correspondiente
     this.items.subscribe(data => {
-      this.userData = data.find(user => user.cedula === cedula);
-      console.log('UserData:', this.userData);
+      // Filtra todos los formularios relacionados con la cédula
+      const formularios = data.filter(user => user.cedula === cedula);
+      console.log('Formularios del usuario:', formularios);
+      // Verifica si se ha seleccionado un formulario específico
+      if (formularioSeleccionado) {
+        // Busca el formulario seleccionado por el usuario
+        const formulario = formularios.find(form => form.id === formularioSeleccionado.id && form.fechaIngreso === formularioSeleccionado.fechaIngreso);
+        if (formulario) {
+          this.userData = formulario;
+          console.log('UserData:', this.userData);
+        } else {
+          console.log('El formulario seleccionado no coincide con los formularios del usuario.');
+        }
+      } else {
+        // Si no se ha seleccionado un formulario específico, muestra el primer formulario encontrado
+        if (formularios.length > 0) {
+          this.userData = formularios[0];
+          console.log('UserData:', this.userData);
+          console.log('VALE VRG:');
+        } else {
+          console.log('No se encontraron formularios para este usuario.');
+        }
+      }
     });
   }
-
-  seleccionarUsuario(usuario: Usuario) {
-    this.sharedService.actualizarCedula(usuario.cedula);
-    this.usuario = usuario; // Update the usuario property
-    this.mostrarDatosGeneralesID(usuario.cedula); // Llamada adicional si quieres actualizar los datos inmediatamente
-  }
+  
+  
 }

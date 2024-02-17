@@ -34,21 +34,35 @@ export class PrincipalEnfermeriaComponent  implements OnInit {
 
   getDatosEnfermeria() {
     this._sharedService.mostrarDatosEnfermeria().subscribe(data => {
-      this.listUsuarios = [];
+      const usuariosMap = new Map<string, Enfermeria>();
+  
       data.forEach((element: any) => {
-
-        this.listUsuarios.push({
+        const usuario: Enfermeria = {
           id: element.payload.doc.id,
           ...element.payload.doc.data()
-        })
+        };
+  
+        if (!usuariosMap.has(usuario.cedula)) {
+          usuariosMap.set(usuario.cedula, usuario);
+        } else {
+          // Si ya existe un usuario con esta cédula, comparar las fechas y actualizar si es necesario
+          const existingUsuario = usuariosMap.get(usuario.cedula)!;
+          if (usuario.fechaIngreso > existingUsuario.fechaIngreso) {
+            existingUsuario.fechaIngreso = usuario.fechaIngreso;
+          }
+          if (usuario.fechaIngreso < existingUsuario.fechaIngreso) {
+            existingUsuario.fechaUltima = usuario.fechaIngreso;
+          }
+        }
       });
-
+  
+      this.listUsuarios = Array.from(usuariosMap.values());
       this.dataSource.data = this.listUsuarios;
-      // Inicializar el ordenamiento
+      this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
-      console.log(this.listUsuarios);
     });
   }
+  
 
 
   cargarUsuario() {
@@ -71,7 +85,7 @@ export class PrincipalEnfermeriaComponent  implements OnInit {
   revisarUsuario(cedula: any) {
     this._sharedService.actualizarCedula(cedula)
     console.log(cedula);
-    this.router.navigate(['/list-enfermeria', { usuario: cedula }]);
+    this.router.navigate(['/historial-enfermeria', { usuario: cedula }]);
   }
 
 }

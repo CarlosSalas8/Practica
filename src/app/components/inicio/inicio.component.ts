@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
@@ -15,14 +15,21 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 })
 
-export class InicioComponent {
-  inicio: FormGroup; // Declarar inicio como un FormGroup
+export class InicioComponent implements OnInit {
+  inicio!: FormGroup;
+  formularios: FormGroup[] = []; // Declarar inicio como un FormGroup
   submitted = false;
   selected: Date | null | undefined;
 
 
-  constructor(private fb: FormBuilder, private _sharedService: SharedService, private router: Router,private _snackBar: MatSnackBar) {
-    this.inicio = this.fb.group({
+  constructor(private fb: FormBuilder, private _sharedService: SharedService, private router: Router,private _snackBar: MatSnackBar) {}
+
+  ngOnInit(): void {
+    this.agregarFormulario();
+  }
+
+  agregarFormulario() {
+    const nuevoFormulario = this.fb.group({
       cedula: ['', Validators.required],
       nombre: ['', Validators.required],
       atencion: ['', Validators.required],
@@ -54,7 +61,11 @@ export class InicioComponent {
       sobrepeso: ['', Validators.required],
       otros: ['', Validators.required],
 
-    })
+    });
+
+    this.formularios.push(nuevoFormulario);
+    this.inicio = nuevoFormulario;
+
 
   }
 
