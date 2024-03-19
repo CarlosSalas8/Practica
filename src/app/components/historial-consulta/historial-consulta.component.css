@@ -1,12 +1,7 @@
 h1 {
-    width: 712px;
-    height: 170px;
-    top: 117px;
-    left: 364px;
-
     font-family: Roboto;
-    font-weight: 400;
-    font-size: 70px;
+    font-weight: 600;
+    font-size: 40px;
     line-height: 82.03px;
 
     color: #222940;
@@ -14,28 +9,49 @@ h1 {
     text-align: center;
 }
 
-.mensaje {
-    width: 918px;
-    height: 84px;
-    top: 224px;
-    left: 261px;
+.cedula {
+    position: absolute;
+    left: 460px;
+    bottom: 490PX;
+    font-weight: 600;
+    width: 952px; 
+}
+.linea-inferior {
+    border-bottom: 1px solid #000;
+  }
+  
 
-    font-family: Roboto;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 28.13px;
-    align-items: center;
-
-    color: #484848;
-    margin: -150px auto;
-    text-align: center;
+.label-cedula {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
 }
 
 
+.examenes {
+    position: absolute;
+    left: 460px;
+    bottom: 550PX;
+    font-weight: 600;
+    width: 952px; 
+}
+
+.label-examenes {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
 .nombre {
     position: absolute;
-    left: 1010px;
-    bottom: 490PX;
+    left: 460px;
+    bottom: 550PX;
+    font-weight: 600;
+    width: 952px; 
 }
 
 .label-nombre {
@@ -46,17 +62,50 @@ h1 {
     font: Roboto;
 }
 
-.custom-inputn {
-    width: 520px;
+.c_subsecuente {
+    position: absolute;
+    left: 460px;
+    bottom: 550PX;
+    font-weight: 600;
+    width: 952px; 
 }
 
-.cedula {
+.label-c_subsecuente {
     position: absolute;
-    left: 360px;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+
+
+.atencion {
+    position: absolute;
+    left: 1240px;
+    bottom: 550PX;
+    font-weight: 600;
+    width: 952px; 
+}
+
+.label-atencion {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+
+.afiliacion {
+    position: absolute;
+    left: 1245px;
     bottom: 490PX;
+    font-weight: 600;
+    width: 952px; 
 }
 
-.label-cedula {
+.label-afiliacion {
     position: absolute;
     left: 0px;
     bottom: 90px;
@@ -64,89 +113,12 @@ h1 {
     font: Roboto;
 }
 
-.custom-inputc {
-    width: 450px;
-}
 
-
-.peso {
-    position: absolute;
-    left: 360px;
-    ;
-    bottom: 330PX;
-}
-
-.label-peso {
-    position: absolute;
-    left: 0px;
-    bottom: 90px;
-    color: #222940;
-    font: Roboto;
-}
-
-.custom-inputpeso {
-    width: 520px;
-}
-
-
-.talla {
-    position: absolute;
-    left: 360px;
-    ;
-    bottom: 165PX;
-}
-
-.label-talla {
-    position: absolute;
-    left: 0px;
-    bottom: 90px;
-    color: #222940;
-    font: Roboto;
-}
-
-.custom-inputtalla {
-    width: 520px;
-}
-
-.cintura {
-    position: absolute;
-    left: 1010px;
-    bottom: 330PX;
-}
-
-.label-cintura {
-    position: absolute;
-    left: 0px;
-    bottom: 90px;
-    color: #222940;
-    font: Roboto;
-}
-
-.custom-inputcintura {
-    width: 520px;
-}
-
-.presion {
-    position: absolute;
-    left: 1010px;
-    bottom: 165PX;
-}
-
-.label-presion {
-    position: absolute;
-    left: 0px;
-    bottom: 90px;
-    color: #222940;
-    font: Roboto;
-}
-
-.custom-inputpresion {
-    width: 520px;
-}
 
 .custom-button {
     margin-left: 850px;
-    margin-top: 680px;
+    ;
+    margin-top: 340px;
     font-size: 25px;
 }
 
@@ -159,3 +131,30 @@ h1 {
     color: white;
     /* Cambia el color del texto si es necesario para asegurarte de que sea legible */
 }
+
+
+table {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+
+
+
+
+

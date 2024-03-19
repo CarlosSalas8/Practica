@@ -20,12 +20,12 @@ const routes: Routes = [
   {path: 'historial-enfermeria', loadChildren: () => import('./components/historial-enfermeria/historial-enfermeria.module').then(x => x.HistorialEnfermeriaModule)},
   {path: 'list-consulta', component: ListConsultaComponent},
   {path: 'principal-consulta', loadChildren: () => import('./components/principal-consulta/principal-consulta.module').then(x => x.PrincipalConsultaModule)},
+  {path: 'historial-consulta', loadChildren: () => import('./components/historial-consulta/historial-consulta.module').then(x => x.HistorialConsultaModule)},
+  {path: 'historia-consulta-detallle', loadChildren: () => import('./components/historia-consulta-detalle/historia-consulta-detalle.module').then(x => x.HistoriaConsultaDetalleModule)},
   {path: '**', redirectTo: 'login',pathMatch: 'full'  } 
 
 
 ];
-
-
 
 
 

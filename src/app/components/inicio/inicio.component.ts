@@ -81,6 +81,15 @@ export class InicioComponent implements OnInit {
     if (this.inicio.invalid) {
       return
     }
+
+    // Obtener el contador de localStorage o inicializarlo en 1 si no existe
+    let contador = localStorage.getItem('formularioContador');
+    if (!contador) {
+      contador = '1';
+    } else {
+      contador = (parseInt(contador) + 1).toString();
+    }
+
     const formatearFecha = (fecha: Date) => format(fecha, 'dd/MM/yyyy');
 
     const datosInicio: any = {
@@ -114,10 +123,12 @@ export class InicioComponent implements OnInit {
       tiroidea: this.inicio.value.tiroidea,
       sobrepeso: this.inicio.value.sobrepeso,
       otros: this.inicio.value.otros,
-
       fechaIngreso: formatearFecha(new Date()),
       fechaUltima: formatearFecha(new Date()),
+      numeroUnico: contador
     }
+
+    localStorage.setItem('formularioContador', contador);
 
     this._sharedService.getDatosGenerales(datosInicio).then(() => {
       console.log('datos registrados con exito!')

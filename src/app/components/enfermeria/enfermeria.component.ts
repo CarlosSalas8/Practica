@@ -13,9 +13,9 @@ import { SharedService } from 'src/app/services/shared.service';
 })
 export class EnfermeriaComponent {
   inicio: FormGroup; // Declarar inicio como un FormGroup
-  submitted = false;  
+  submitted = false;
 
-  constructor(private fb: FormBuilder, private _sharedService: SharedService, private router: Router,private _snackBar: MatSnackBar){
+  constructor(private fb: FormBuilder, private _sharedService: SharedService, private router: Router, private _snackBar: MatSnackBar) {
     this.inicio = this.fb.group({
       cedula: ['', Validators.required],
       nombre: ['', Validators.required],
@@ -33,6 +33,13 @@ export class EnfermeriaComponent {
     if (this.inicio.invalid) {
       return
     }
+    // Obtener el contador de localStorage o inicializarlo en 1 si no existe
+    let contador = localStorage.getItem('formularioContador');
+    if (!contador) {
+      contador = '1';
+    } else {
+      contador = (parseInt(contador) + 1).toString();
+    }
     const formatearFecha = (fecha: Date) => format(fecha, 'dd/MM/yyyy');
 
     const datosInicio: any = {
@@ -44,7 +51,10 @@ export class EnfermeriaComponent {
       presion: this.inicio.value.presion,
       fechaIngreso: formatearFecha(new Date()),
       fechaUltima: formatearFecha(new Date()),
+      numeroUnico: contador
     }
+
+    localStorage.setItem('formularioContador', contador);
 
     this._sharedService.getDatosEnfermeria(datosInicio).then(() => {
       console.log('datos registrados con exito!')

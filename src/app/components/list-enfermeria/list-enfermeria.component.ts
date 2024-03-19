@@ -39,7 +39,7 @@ export class ListEnfermeriaComponent implements OnInit {
       // Verifica si se ha seleccionado un formulario específico
       if (formularioSeleccionado) {
         // Busca el formulario seleccionado por el usuario
-        const formulario = formularios.find(form => form.id === formularioSeleccionado.id && form.fechaIngreso === formularioSeleccionado.fechaIngreso);
+        const formulario = formularios.find(form => form.id === formularioSeleccionado.id && form.fechaIngreso === formularioSeleccionado.fechaIngreso && form.numeroUnico === formularioSeleccionado.numeroUnico);
         if (formulario) {
           this.userData = formulario;
           console.log('UserData:', this.userData);

@@ -15,7 +15,7 @@ export class PrincipalConsultaComponent implements OnInit {
 
   listUsuarios: Consulta[] = [];
 
-  displayedColumns: string[] = ['cedula', 'fechaIngreso', 'fechaUltima', 'historial'];
+  displayedColumns: string[] = ['cedula', 'nombres', 'fechaIngreso', 'fechaUltima', 'historial'];
 
   dataSource = new MatTableDataSource(this.listUsuarios);
 
@@ -24,12 +24,45 @@ export class PrincipalConsultaComponent implements OnInit {
 
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private _sharedService: SharedService, private router: Router) {
+  constructor(private _sharedService: SharedService, private router: Router,) {
   }
 
   ngOnInit(): void {
-    this.getDatosEnfermeria();
+    this.getAllData();
   }
+
+
+  getAllData() {
+    this._sharedService.getAllData().subscribe(data => {
+      const usuariosMap = new Map<string, Consulta>();
+
+      data.forEach((element: any) => {
+        const usuario: Consulta = {
+          id: element.id,
+          ...element
+        };
+
+        if (!usuariosMap.has(usuario.cedula)) {
+          usuariosMap.set(usuario.cedula, usuario);
+        } else {
+          // Si ya existe un usuario con esta cédula, comparar las fechas y actualizar si es necesario
+          const existingUsuario = usuariosMap.get(usuario.cedula)!;
+          if (usuario.fechaIngreso > existingUsuario.fechaIngreso) {
+            existingUsuario.fechaIngreso = usuario.fechaIngreso;
+          }
+          if (usuario.fechaIngreso < existingUsuario.fechaIngreso) {
+            existingUsuario.fechaUltima = usuario.fechaIngreso;
+          }
+        }
+      });
+
+      this.listUsuarios = Array.from(usuariosMap.values());
+      this.dataSource.data = this.listUsuarios;
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    });
+  }
+
 
   getDatosEnfermeria() {
     this._sharedService.mostrarDatosConsulta().subscribe(data => {
@@ -70,7 +103,7 @@ export class PrincipalConsultaComponent implements OnInit {
   revisarUsuario(cedula: any) {
     this._sharedService.actualizarCedula(cedula)
     console.log(cedula);
-    this.router.navigate(['/list-consulta', { usuario: cedula }]);
+    this.router.navigate(['/historial-consulta', { usuario: cedula }]);
   }
 
 }

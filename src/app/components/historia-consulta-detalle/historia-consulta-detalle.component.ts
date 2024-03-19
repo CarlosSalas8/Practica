@@ -1,22 +1,21 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { Usuario } from 'src/app/interfaces/usuario';
-import { SharedService } from 'src/app/services/shared.service';
-import { ActivatedRoute } from '@angular/router';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { Consulta } from 'src/app/interfaces/consulta';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
-  selector: 'app-historial-inicio',
-  templateUrl: './historial-inicio.component.html',
-  styleUrls: ['./historial-inicio.component.css']
+  selector: 'app-historia-consulta-detalle',
+  templateUrl: './historia-consulta-detalle.component.html',
+  styleUrls: ['./historia-consulta-detalle.component.css']
 })
-export class HistorialInicioComponent implements OnInit {
+export class HistoriaConsultaDetalleComponent implements OnInit {
 
-  listUsuarios: Usuario[] = [];
+  listUsuarios: Consulta[] = [];
 
   displayedColumns: string[] = ['cedula', 'nombres', 'fechaIngreso', 'historial'];
 
@@ -28,7 +27,7 @@ export class HistorialInicioComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
 
 
-  @Input() usuario!: Usuario;
+  @Input() usuario!: Consulta;
   items: Observable<any[]> | undefined;
   userData: any | undefined;
   formularios: any[] = [];
@@ -38,6 +37,7 @@ export class HistorialInicioComponent implements OnInit {
     this.firestore = firestore;
   }
 
+
   ngOnInit(): void {
     this.sharedService.cedulaSeleccionada$.subscribe(cedula => {
       if (cedula) {
@@ -46,22 +46,9 @@ export class HistorialInicioComponent implements OnInit {
     });
   }
 
-
-  cargarUsuario() {
-    this.dataSource = new MatTableDataSource(this.listUsuarios);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
-
-
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
-
   mostrarFormulariosPorCedula(cedula: string) {
-    
-    this.firestore.collection('datosGenerales', ref => ref.where('cedula', '==', cedula)).valueChanges()
+
+    this.firestore.collection('consulta', ref => ref.where('cedula', '==', cedula)).valueChanges()
       .subscribe((data: any[]) => {
         this.formularios = data;
         this.userData = data.find(user => user.cedula === cedula);
@@ -84,11 +71,21 @@ export class HistorialInicioComponent implements OnInit {
 
         console.log('Formularios del usuario:', this.formularios);
       });
-}
+  }
+
+  cargarUsuario() {
+    this.dataSource = new MatTableDataSource(this.listUsuarios);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
 
 
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
 
-  seleccionarUsuario(usuario: Usuario) {
+  seleccionarUsuario(usuario: Consulta) {
     this.sharedService.actualizarCedula(usuario.cedula);
     this.usuario = usuario; // Update the usuario property
     this.mostrarFormulariosPorCedula(usuario.cedula); // Llamada adicional si quieres actualizar los datos inmediatamente
@@ -98,13 +95,8 @@ export class HistorialInicioComponent implements OnInit {
     // Aquí puedes hacer lo que necesites con el formulario seleccionado
     console.log('Formulario seleccionado:', formulario);
 
-    this.router.navigate(['/list-inicio'], { state: { formulario: formulario } });
+    this.router.navigate(['/list-consulta'], { state: { formulario: formulario } });
 
   }
 
-
 }
-
-
-
-

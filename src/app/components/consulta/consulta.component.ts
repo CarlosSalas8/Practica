@@ -26,6 +26,7 @@ export class ConsultaComponent {
   constructor(private fb: FormBuilder, private _sharedService: SharedService, private router: Router, private _snackBar: MatSnackBar) {
     this.inicio = this.fb.group({
       cedula: ['', Validators.required],
+      nombre: ['', Validators.required],
       mujer: ['', Validators.required],
       enfermedades: ['', Validators.required],
       hipotirodismo: ['', Validators.required],
@@ -53,6 +54,7 @@ export class ConsultaComponent {
 
     const datosInicio: any = {
       cedula: this.inicio.value.cedula,
+      nombre: this.inicio.value.nombre,
       mujer: this.inicio.value.mujer,
       enfermedades: this.inicio.value.enfermedades,
       hipotirodismo: this.inicio.value.hipotirodismo,

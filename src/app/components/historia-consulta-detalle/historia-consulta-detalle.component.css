@@ -1,0 +1,128 @@
+h1 {
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 82.03px;
+
+    color: #222940;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.cedula {
+    position: absolute;
+    left: 460px;
+    bottom: 490PX;
+    font-weight: 600;
+    width: 952px; 
+}
+.linea-inferior {
+    border-bottom: 1px solid #000;
+  }
+  
+
+.label-cedula {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+
+.nombre {
+    position: absolute;
+    left: 460px;
+    bottom: 550PX;
+    font-weight: 600;
+    width: 952px; 
+}
+
+.label-nombre {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+
+
+.atencion {
+    position: absolute;
+    left: 1240px;
+    bottom: 550PX;
+    font-weight: 600;
+    width: 952px; 
+}
+
+.label-atencion {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+
+.afiliacion {
+    position: absolute;
+    left: 1245px;
+    bottom: 490PX;
+    font-weight: 600;
+    width: 952px; 
+}
+
+.label-afiliacion {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+
+
+.custom-button {
+    margin-left: 850px;
+    ;
+    margin-top: 340px;
+    font-size: 25px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.mat-toolbar {
+    background-color: #222940;
+    color: white;
+    /* Cambia el color del texto si es necesario para asegurarte de que sea legible */
+}
+
+
+table {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+
+
+
+
+

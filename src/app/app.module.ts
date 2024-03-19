@@ -22,8 +22,8 @@ import { ListConsultaComponent } from './components/list-consulta/list-consulta.
     ListInicioComponent,
     ListEnfermeriaComponent,
     ListConsultaComponent
-    
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,

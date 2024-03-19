@@ -25,7 +25,7 @@ export class HistorialEnfermeriaComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   @ViewChild(MatSort) sort!: MatSort;
-  
+
 
   @Input() usuario!: Enfermeria;
   items: Observable<any[]> | undefined;
@@ -59,20 +59,31 @@ export class HistorialEnfermeriaComponent implements OnInit {
 
   mostrarDatosEnfermeriaID(cedula: string) {
     this.firestore.collection('enfermeria', ref => ref.where('cedula', '==', cedula)).valueChanges()
-    .subscribe((data: any[]) => {
-      this.formularios = data;
-      this.userData = data.find(user => user.cedula === cedula);
+      .subscribe((data: any[]) => {
+        this.formularios = data;
+        this.userData = data.find(user => user.cedula === cedula);
 
-      // Establecer la fecha de ingreso del primer formulario como "FECHA INGRESO"
-      this.userData.fechaIngreso = this.formularios[0]?.fechaIngreso;
+        // Ordenar los formularios por fecha de ingreso
+        this.formularios.sort((a, b) => {
+          return new Date(a.fechaIngreso).getTime() - new Date(b.fechaIngreso).getTime();
+        });
 
-      // Establecer la fecha de ingreso del segundo formulario como "ULTIMA FECHA"
-      this.userData.fechaUltima = this.formularios[this.formularios.length - 1]?.fechaIngreso;
+        // Establecer la fecha de ingreso del primer formulario como "FECHA INGRESO"
+        this.userData.fechaIngreso = this.formularios[0]?.fechaIngreso;
 
-      this.dataSource.data = this.formularios;
-      console.log('Formularios del usuario:', this.formularios);
-    });
+        // Obtener la fecha de ingreso del último formulario
+        const ultimaFecha = this.formularios[this.formularios.length - 1]?.fechaIngreso;
+
+        // Establecer la fecha de ingreso del último formulario como "ULTIMA FECHA"
+        this.userData.fechaUltima = ultimaFecha;
+
+        this.dataSource.data = this.formularios;
+
+        console.log('Formularios del usuario:', this.formularios);
+      });
   }
+
+
 
   seleccionarUsuario(usuario: Enfermeria) {
     this.sharedService.actualizarCedula(usuario.cedula);
@@ -80,7 +91,7 @@ export class HistorialEnfermeriaComponent implements OnInit {
     this.mostrarDatosEnfermeriaID(usuario.cedula); // Llamada adicional si quieres actualizar los datos inmediatamente
   }
 
-  
+
   revisarUsuario(formulario: any) {
     // Aquí puedes hacer lo que necesites con el formulario seleccionado
     console.log('Formulario seleccionado:', formulario);

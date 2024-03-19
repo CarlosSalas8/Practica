@@ -31,6 +31,24 @@ h1 {
     text-align: center;
 }
 
+.nombre {
+    position: absolute;
+    left: 1060px;
+    bottom: 490PX;
+}
+
+.label-nombre {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+.custom-inputn {
+    width: 450px;
+}
+
 .cedula {
     position: absolute;
     left: 360px;

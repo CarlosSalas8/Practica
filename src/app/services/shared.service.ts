@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -103,14 +103,19 @@ export class SharedService {
     return this.firestore.collection('consulta').doc(cedula).valueChanges();
   }
 
+  getAllData(): Observable<any[]> {
+    // Recupera los datos de cada colección por separado
+    const datosGenerales$ = this.firestore.collection('datosGenerales').valueChanges();
+    const consulta$ = this.firestore.collection('consulta').valueChanges();
+    const enfermeria$ = this.firestore.collection('enfermeria').valueChanges();
 
-
-
-
-
-
-
-
-
+    // Combina los observables de cada colección
+    return combineLatest([datosGenerales$, consulta$, enfermeria$]).pipe(
+      map(([datosGenerales, consulta, enfermeria]) => {
+        // Combina los datos de todas las colecciones en una sola matriz
+        return [...datosGenerales, ...consulta, ...enfermeria];
+      })
+    );
+  }
 
 }

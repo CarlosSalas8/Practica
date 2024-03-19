@@ -44,6 +44,23 @@ h1 {
     font: Roboto;
 }
 
+.nombre {
+    position: absolute;
+    left: 1060px;
+    bottom: 450PX;
+    width: 952px;
+    font-weight: 600;
+}
+
+.label-nombre {
+    position: absolute;
+    left: 0px;
+    bottom: 90px;
+    color: #222940;
+    font: Roboto;
+}
+
+
 
 
 .mujer {
